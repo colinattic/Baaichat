@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+
+<title>Baaichat — Something New Is Coming</title>
+<meta name="description" content="Be among the first to experience Baaichat. Join our early access waitlist.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #1d9bf0;
+    --dark-blue: #0878cf;
+    --light-blue: #e8f5ff;
+    --text: #17202a;
+    --muted: #687786;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.header-link {
+    text-decoration: none;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #d9edff;
+    padding: 11px 19px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.header-link:hover {
+    background: var(--light-blue);
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px 90px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--light-blue);
+    color: #0878cf;
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 4px #cceaff;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 76px);
+    font-weight: 900;
+    letter-spacing: -5px;
+    line-height: 1.08;
+    max-width: 850px;
+    margin: auto;
+}
+
+h1 span {
+    color: var(--blue);
+}
+
+.subtitle {
+    color: var(--muted);
+    max-width: 570px;
+    margin: 25px auto 35px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.form {
+    display: flex;
+    max-width: 490px;
+    margin: auto;
+    padding: 7px;
+    background: white;
+    border: 1px solid #e2eaf0;
+    box-shadow: 0 10px 40px rgba(29,155,240,.10);
+    border-radius: 17px;
+    gap: 8px;
+}
+
+.form input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form button {
+    background: var(--blue);
+    border: none;
+    color: white;
+    padding: 15px 23px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form button:hover {
+    background: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.note {
+    margin-top: 17px;
+    font-size: 11px;
+    color: #8995a1;
+}
+
+.message {
+    display: none;
+    color: #0878cf;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.visual {
+    margin: 75px auto 0;
+    max-width: 740px;
+    background: linear-gradient(135deg,#e8f5ff,#f5faff);
+    border: 1px solid #dcefff;
+    border-radius: 28px;
+    padding: 45px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual h2 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.visual p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.chat-card {
+    margin: 30px auto 0;
+    max-width: 390px;
+    background: white;
+    border-radius: 19px;
+    padding: 19px;
+    text-align: left;
+    box-shadow: 0 12px 35px rgba(30,80,120,.08);
+}
+
+.chat-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 39px;
+    height: 39px;
+    background: var(--blue);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 800;
+}
+
+.chat-top strong {
+    font-size: 13px;
+}
+
+.chat-top small {
+    display: block;
+    color: #8b98a5;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.bubble {
+    background: #edf7ff;
+    color: #34495e;
+    padding: 13px 15px;
+    border-radius: 5px 15px 15px 15px;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 90%;
+    margin-bottom: 12px;
+}
+
+.bubble.right {
+    margin-left: auto;
+    background: var(--blue);
+    color: white;
+    border-radius: 15px 5px 15px 15px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 65px;
+}
+
+.feature {
+    font-size: 12px;
+    font-weight: 600;
+    color: #687786;
+}
+
+.feature span {
+    color: var(--blue);
+    margin-right: 7px;
+}
+
+footer {
+    border-top: 1px solid #edf1f5;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+footer p {
+    color: #9aa6b2;
+    font-size: 11px;
+    line-height: 2;
+}
+
+footer a {
+    color: #1689dc;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@media(max-width:600px) {
+    header {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 75px 20px 60px;
+    }
+
+    h1 {
+        letter-spacing: -2.8px;
+        font-size: 47px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-top: 22px;
+    }
+
+    .form {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .form input {
+        padding: 15px;
+    }
+
+    .form button {
+        width: 100%;
+    }
+
+    .visual {
+        margin-top: 55px;
+        padding: 35px 15px;
+    }
+
+    .features {
+        gap: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">baai<span>chat</span>.</div>
+    <a href="#waitlist" class="header-link">Join Waitlist ↗</a>
+</header>
+
+<main>
+
+    <div class="tag">
+        <span class="dot"></span>
+        SOMETHING NEW IS COMING
+    </div>
+
+    <h1>
+        The future of<br>
+        conversation is <span>closer.</span>
+    </h1>
+
+    <p class="subtitle">
+        Something exciting is on its way.
+        Baaichat is preparing a new experience.
+        Be among the first to discover it.
+    </p>
+
+    <form class="form" id="waitlist">
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            required
+        >
+        <button type="submit" id="submitBtn">
+            Join Waitlist →
+        </button>
+    </form>
+
+    <div class="message" id="message">
+        You're on the list! Thank you for joining.
+    </div>
+
+    <p class="note">
+        Free to join. Be the first to hear about our launch.
+    </p>
+
+    <section class="visual">
+        <h2>A new way to connect.</h2>
+        <p>We're working on something worth waiting for.</p>
+
+        <div class="chat-card">
+
+            <div class="chat-top">
+                <div class="avatar">B</div>
+                <div>
+                    <strong>Baaichat</strong>
+                    <small>Building something new</small>
+                </div>
+            </div>
+
+            <div class="bubble">
+                Hey! Something exciting is coming soon. 🚀
+            </div>
+
+            <div class="bubble right">
+                Can't wait to see it!
+            </div>
+
+            <div class="bubble">
+                Stay tuned. You're going to love what's next.
+            </div>
+
+        </div>
+    </section>
+
+    <div class="features">
+        <div class="feature"><span>✦</span> A fresh experience</div>
+        <div class="feature"><span>✦</span> Built for everyone</div>
+        <div class="feature"><span>✦</span> Coming soon</div>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Baaichat.com. All rights reserved.</p>
+    <p>
+        Powered by <a href="https://baaimart.com">Baaimart</a>
+        &nbsp;·&nbsp;
+        Blogged by <a href="https://halaldreams.org">HalalDreams</a>
+    </p>
+</footer>
+
+<script>
+const form = document.getElementById('waitlist');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+
+    if (!email) return;
+
+    message.style.display = 'block';
+    message.textContent =
+        "Thanks for your interest! Waitlist registration is currently in demo mode.";
+
+    form.reset();
+});
+</script>
+
+</body>
+</html>
